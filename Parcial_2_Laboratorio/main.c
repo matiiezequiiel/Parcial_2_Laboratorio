@@ -33,34 +33,43 @@ int main()
           //  gets(nombreArchivo);
             retorno=controller_Aguirre_cargarArchivosVuelos("Vuelos.csv",listaVuelos);
 
-             //  printf("Ingrese nombre del archivo de pilotos: ");
-          //  gets(nombreArchivo);
 
-            retorno=controller_Aguirre_cargarArchivosPilotos("Pilotos.csv",ListaPilotos);
-
-            if(!archivoCargado)
-            {
                 if(retorno)
                 {
                     system("cls");
-                    printf("\nArchivo cargado correctamente.\n\n");
+                    printf("\nArchivo de vuelos cargado correctamente.\n\n");
                     system("pause");
                     archivoCargado=1;
                 }
                 else
                 {
                     system("cls");
-                    printf("\nNo se pudo cargar el archivo.\n\n");
+                    printf("\nNo se pudo cargar el archivo de vuelos.\n\n");
                     system("pause");
                 }
-            }
-            else
-            {
-                system("cls");
-                printf("El archivo ya fue cargado.\n\n");
-                system("pause");
 
-            }
+
+
+             //  printf("Ingrese nombre del archivo de pilotos: ");
+          //  gets(nombreArchivo);
+
+            retorno=controller_Aguirre_cargarArchivosPilotos("Pilotos.csv",ListaPilotos);
+
+                if(retorno)
+                {
+                    system("cls");
+                    printf("\nArchivo pilotos cargado correctamente.\n\n");
+                    system("pause");
+                    archivoCargado=1;
+                }
+                else
+                {
+                    system("cls");
+                    printf("\nNo se pudo cargar el archivo de pilotos.\n\n");
+                    system("pause");
+                }
+
+
 
             break;
 

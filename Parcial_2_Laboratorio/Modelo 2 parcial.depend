@@ -133,21 +133,23 @@
 
 1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.h
 
-1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.c
+1593470026 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.c
 	<string.h>
-	<stdIO.h>
+	<stdio.h>
 	<stdlib.h>
 	"Pilotos.h"
+	"FuncionesUtiles.h"
 
 1593469868 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.h
 
-1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.c
+1593471191 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.c
 	"Vuelos-Pilotos.h"
 	<stdio.h>
 
-1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.h
+1593470598 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.h
 	"Vuelos.h"
 	"Pilotos.h"
+	"LinkedList.h"
 
 1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.h
 
@@ -161,7 +163,7 @@
 
 1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.h
 
-1593469030 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.c
+1593471252 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -171,7 +173,7 @@
 	"Pilotos.h"
 	"Controller.h"
 
-1593468773 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.h
+1593470844 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.h
 
 1593468174 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.c
 	<stdio.h>
@@ -180,7 +182,7 @@
 	<ctype.h>
 	"FuncionesUtiles.h"
 
-1593468795 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\main.c
+1593471007 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

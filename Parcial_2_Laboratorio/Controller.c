@@ -110,7 +110,7 @@ int parser_PilotoFromText(FILE* pFile, LinkedList* pArrayListPilotos)
         // printf("%d--%d--%d--%d--%d--%d--%d--%d",strlen(idVuelo),strlen(idAvion),strlen(fecha),strlen(destino),strlen(cantPasajeros),strlen(horaDespegue),strlen(horaLlegada),strlen(idVuelo));
         // system("pause");
 
-       // pPiloto=piloto_newParametros(id,nombre,apellido);
+        pPiloto=piloto_newParametros(id,nombre,apellido);
 
         if(pPiloto!=NULL && pArrayListPilotos!=NULL)
         {
@@ -162,7 +162,7 @@ int parser_VueloFromText(FILE* pFile, LinkedList* pArrayListVuelos)
 }
 
 
-int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos)
 {
     eVuelo* vuelo;
     int contMostrados=0;
@@ -180,7 +180,7 @@ int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilo
 
         }
         vuelo=ll_get(pArrayListVuelos,i);
-        mostrarVuelos(vuelo,listaPilotos);
+        mostrarVuelos(vuelo,pArrayListPilotos);
         contMostrados++;
 
 
@@ -273,7 +273,7 @@ int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos)
     return retorno;
 }
 
-int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos)
 {
     int retorno=-1;
     LinkedList* pLinkedListVuelosPortugal=NULL;
@@ -284,7 +284,7 @@ int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto
 
         if(pLinkedListVuelosPortugal != NULL)
         {
-           controller_Aguirre_ListVuelos(pLinkedListVuelosPortugal,listaPilotos);
+           controller_Aguirre_ListVuelos(pLinkedListVuelosPortugal,pArrayListPilotos);
            retorno=1;
 
         }

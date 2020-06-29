@@ -27,7 +27,7 @@ int parser_VueloFromText(FILE* pFile , LinkedList* pArrayListVuelos);
 
 int parser_PilotoFromText(FILE* pFile , LinkedList* pArrayListPilotos);
 
-int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
+int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos);
 
 int controller_Aguirre_cantPasajeros(LinkedList* pArrayListVuelos);
 
@@ -35,6 +35,6 @@ int controller_Aguirre_filterVuelosCortos(LinkedList* pArrayListVuelos);
 
 int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos);
 
-int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
+int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos);
 
 

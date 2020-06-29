@@ -1,7 +1,8 @@
 #include <string.h>
-#include <stdIO.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "Pilotos.h"
+#include "FuncionesUtiles.h"
 
 /*****************************************************************************************************************************/
 /*CONSTRUCTORES*/
@@ -21,12 +22,12 @@ ePiloto* piloto_newParametros(char* id,char* nombre,char* apellido)
 {
     ePiloto* pNuevoPiloto=NULL;
 
-    pNuevoPiloto=vuelo_new();
+    pNuevoPiloto=piloto_new();
 
 
-    vuelo_setId(pNuevoVuelo,id);
-    vuelo_setNombre(pNuevoVuelo,nombre);
-    vuelo_setApellido(pNuevoVuelo,apellido);
+    piloto_setId(pNuevoPiloto,id);
+    piloto_setNombre(pNuevoPiloto,nombre);
+    piloto_setApellido(pNuevoPiloto,apellido);
 
 
     return pNuevoPiloto;

@@ -1,8 +1,9 @@
 #include"Vuelos-Pilotos.h"
+
 #include<stdio.h>
 
 
-void mostrarVuelos(eVuelo* pVuelo,ePiloto listaPilotos[])
+void mostrarVuelos(eVuelo* pVuelo,LinkedList* pArrayListPilotos)
 {
     int idVuelo;
     int idAvion;
@@ -12,6 +13,7 @@ void mostrarVuelos(eVuelo* pVuelo,ePiloto listaPilotos[])
     int cantPasajeros;
     int horaDespegue;
     int horaLlegada;
+    ePiloto* pPiloto=NULL;
 
 
     vuelo_getIdVuelo(pVuelo,&idVuelo);
@@ -28,12 +30,18 @@ void mostrarVuelos(eVuelo* pVuelo,ePiloto listaPilotos[])
     printf("%5d\t",idVuelo);
     printf("%5d\t",idAvion);
 
-    for(int i=0;i<5;i++)
+    for(int i=0;i<ll_len(pArrayListPilotos);i++)
     {
-        if(listaPilotos[i].idPiloto==idPiloto)
+        pPiloto=(ePiloto*)ll_get(pArrayListPilotos,i);
+    /*    printf("%d",pPiloto->idPiloto);
+        printf("%s",pPiloto->nombre);
+        printf("%s",pPiloto->apellido);
+        system("pause");*/
+
+        if(pPiloto->idPiloto==idPiloto)
         {
-             printf("%10s",listaPilotos[i].nombre);
-             printf("%10s\t",listaPilotos[i].apellido);
+             printf("%10s",pPiloto->nombre);
+             printf("%10s\t",pPiloto->apellido);
              break;
         }
     }
