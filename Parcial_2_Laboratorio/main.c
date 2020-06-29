@@ -12,11 +12,13 @@ int main()
     int retorno;
     char nombreArchivo[20];
     int archivoCargado=0;
-    ePiloto ListaPilotos[5];
+
     LinkedList* listaVuelos;
+    LinkedList* ListaPilotos;
 
     listaVuelos=ll_newLinkedList();
-    hardcodearPilotos(ListaPilotos);
+    ListaPilotos=ll_newLinkedList();
+
 
 
     do
@@ -27,9 +29,14 @@ int main()
         switch(opcion)
         {
         case 1:
-          //  printf("Ingrese nombre del archivo: ");
+          //  printf("Ingrese nombre del archivo de vuelos: ");
           //  gets(nombreArchivo);
-            retorno=controller_cargarArchivos("Vuelos.csv",listaVuelos);
+            retorno=controller_Aguirre_cargarArchivosVuelos("Vuelos.csv",listaVuelos);
+
+             //  printf("Ingrese nombre del archivo de pilotos: ");
+          //  gets(nombreArchivo);
+
+            retorno=controller_Aguirre_cargarArchivosPilotos("Pilotos.csv",ListaPilotos);
 
             if(!archivoCargado)
             {
@@ -58,19 +65,19 @@ int main()
             break;
 
         case 2:
-            controller_ListVuelos(listaVuelos,ListaPilotos);
+            controller_Aguirre_ListVuelos(listaVuelos,ListaPilotos);
             break;
 
         case 3:
-            controller_cantPasajeros(listaVuelos);
+            controller_Aguirre_cantPasajeros(listaVuelos);
             break;
 
         case 4:
-             controller_cantPasajeros(listaVuelos);
+             controller_Aguirre_cantPasajeros(listaVuelos);
             break;
 
         case 5:
-            retorno=controller_filterVuelosCortos(listaVuelos);
+            retorno=controller_Aguirre_filterVuelosCortos(listaVuelos);
             if(retorno)
             {
                 system("cls");
@@ -89,11 +96,11 @@ int main()
             break;
 
         case 6:
-            controller_filterVuelosPortugal(listaVuelos,ListaPilotos);
+            controller_Aguirre_filterVuelosPortugal(listaVuelos,ListaPilotos);
             break;
 
         case 7:
-            controller_filterAlexLifeson(listaVuelos,ListaPilotos);
+            controller_Aguirre_filterAlexLifeson(listaVuelos,ListaPilotos);
             break;
 
         default:
@@ -102,7 +109,7 @@ int main()
         }
 
 
-    }while(opcion != 8);
+    }while(opcion != 9);
 
     return 0;
 }

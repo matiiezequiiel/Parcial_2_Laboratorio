@@ -19,13 +19,14 @@ int mostrarMenuABM(void)
         printf("\n5. Filtrar vuelos cortos.");
         printf("\n6. Listar vuelos a Portugal. ");
         printf("\n7. Filtrar a Alex Lifeson. ");
-        printf("\n8. Salir.");
+        printf("\n8. Filtrar a pilotos por nombre. ");
+        printf("\n9. Salir.");
 
         printf("\n\nOpcion elegida:");
         fflush(stdin);
         gets(entrada);
 
-        opcion=validarIntEntreRangos(entrada,1,8);
+        opcion=validarIntEntreRangos(entrada,1,9);
         system("cls");
         return opcion;
 

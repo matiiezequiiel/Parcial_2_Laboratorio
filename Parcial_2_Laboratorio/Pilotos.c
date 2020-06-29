@@ -3,26 +3,152 @@
 #include <stdlib.h>
 #include "Pilotos.h"
 
-void hardcodearPilotos(ePiloto listaPilotos[])
+/*****************************************************************************************************************************/
+/*CONSTRUCTORES*/
+
+ePiloto* piloto_new()
 {
-    int idPiloto[5]= {1,2,3,4,5};
-    char nombre[5][20]={"Alex","Richard","Jhon","Erwin","Stephen"};
-    char apellido[5][20]={"Lifeson","Bach","Kerry","Rommel","Coonts"};
-    int i;
+    ePiloto* pNuevoPiloto=NULL;
 
+    pNuevoPiloto=(ePiloto*)malloc(sizeof(ePiloto));
 
-    for(i=0;i<5;i++)
-    {
-        listaPilotos[i].idPiloto=idPiloto[i];
-        strcpy(listaPilotos[i].nombre,nombre[i]);
-        strcpy(listaPilotos[i].apellido,apellido[i]);
-    }
+    return pNuevoPiloto;
 
-  /*  for(i=0;i<5;i++)
-    {
-        printf("%d---%s---%s\n",listaPilotos[i].idPiloto,listaPilotos[i].nombre,listaPilotos[i].apellido);
-
-    }
-  */
 }
 
+
+ePiloto* piloto_newParametros(char* id,char* nombre,char* apellido)
+{
+    ePiloto* pNuevoPiloto=NULL;
+
+    pNuevoPiloto=vuelo_new();
+
+
+    vuelo_setId(pNuevoVuelo,id);
+    vuelo_setNombre(pNuevoVuelo,nombre);
+    vuelo_setApellido(pNuevoVuelo,apellido);
+
+
+    return pNuevoPiloto;
+
+}
+
+/*****************************************************************************************************************************/
+/*SETTERS*/
+
+int piloto_setId(ePiloto* this,char* id)
+{
+    int idPilotoNuevo;
+    int retorno=0;
+
+    if(this != NULL)
+    {
+        idPilotoNuevo=getInt(id);
+        this->idPiloto=idPilotoNuevo;
+        retorno=1;
+    }
+
+    return retorno;
+
+}
+
+int piloto_setNombre(ePiloto* this,char* nombre)
+{
+    int retorno=0;
+
+    formatearCadena(nombre);
+
+    if(this != NULL)
+    {
+        while(!validarCadena(nombre))
+        {
+            printf("Nombre con formato invalido.\n\n");
+            printf("Ingrese nombre correctamente: ");
+            fflush(stdin);
+            gets(nombre);
+            formatearCadena(nombre);
+            validarCadena(nombre);
+        }
+
+        strcpy(this->nombre,nombre);
+
+
+        retorno=1;
+    }
+
+    return retorno;
+
+}
+
+int piloto_setApellido(ePiloto* this,char* apellido)
+{
+    int retorno=0;
+
+    formatearCadena(apellido);
+
+    if(this != NULL)
+    {
+        while(!validarCadena(apellido))
+        {
+            printf("Apellido con formato invalido.\n\n");
+            printf("Ingrese apellido correctamente: ");
+            fflush(stdin);
+            gets(apellido);
+            formatearCadena(apellido);
+            validarCadena(apellido);
+        }
+
+        strcpy(this->apellido,apellido);
+
+
+        retorno=1;
+    }
+
+    return retorno;
+
+}
+
+/*****************************************************************************************************************************/
+/*GETTERS*/
+
+int piloto_getId(ePiloto* this,int* idPiloto)
+{
+    int retorno=0;
+
+    if(this != NULL && idPiloto != NULL)
+    {
+        *idPiloto=this->idPiloto;
+        retorno=1;
+    }
+
+    return retorno;
+
+}
+
+int piloto_getNombre(ePiloto* this,char* nombre)
+{
+    int retorno=0;
+
+    if(this != NULL)
+    {
+        strcpy(nombre,this->nombre);
+        retorno=1;
+    }
+
+    return retorno;
+
+}
+
+int piloto_getApellido(ePiloto* this,char* apellido)
+{
+    int retorno=0;
+
+    if(this != NULL)
+    {
+        strcpy(apellido,this->apellido);
+        retorno=1;
+    }
+
+    return retorno;
+
+}

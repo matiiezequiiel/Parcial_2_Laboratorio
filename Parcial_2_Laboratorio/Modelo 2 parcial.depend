@@ -125,3 +125,66 @@
 	<string.h>
 	"LinkedList.h"
 
+1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.h
+
+1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.c
+	<string.h>
+	<stdIO.h>
+	<stdlib.h>
+	"Pilotos.h"
+
+1593469868 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.h
+
+1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.c
+	"Vuelos-Pilotos.h"
+	<stdio.h>
+
+1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.h
+	"Vuelos.h"
+	"Pilotos.h"
+
+1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.h
+
+1593467999 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesUtiles.h"
+	"LinkedList.h"
+	"Vuelos.h"
+
+1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.h
+
+1593469030 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"FuncionesUtiles.h"
+	"LinkedList.h"
+	"Vuelos.h"
+	"Pilotos.h"
+	"Controller.h"
+
+1593468773 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.h
+
+1593468174 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"FuncionesUtiles.h"
+
+1593468795 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Pilotos.h"
+	"FuncionesUtiles.h"
+	"Controller.h"
+

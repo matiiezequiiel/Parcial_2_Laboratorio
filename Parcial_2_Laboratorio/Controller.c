@@ -7,7 +7,7 @@
 #include "Pilotos.h"
 #include "Controller.h"
 
-int controller_cargarArchivos(char* path, LinkedList* pArrayListVuelos)
+int controller_Aguirre_cargarArchivosVuelos(char* path, LinkedList* pArrayListVuelos)
 {
     //ABRIR ARCHIVOS
     FILE* fileArchivo;
@@ -50,6 +50,78 @@ int controller_cargarArchivos(char* path, LinkedList* pArrayListVuelos)
     return retorno;
 }
 
+int controller_Aguirre_cargarArchivosPilotos(char* path, LinkedList* pArrayListPilotos)
+{
+    //ABRIR ARCHIVOS
+    FILE* fileArchivo;
+    char cabeceraId[20];
+    char cabeceraIdNombre[20];
+    char cabeceraIdApellido[20];
+
+    int retorno=0;
+
+    if(pArrayListPilotos != NULL)
+    {
+        fileArchivo=fopen(path,"r");
+
+        if(fileArchivo!=NULL)
+        {
+            printf("Archivo abierto correctamente.\n");
+
+            fscanf(fileArchivo,"%[^,],%[^,],%[^\n]\n",cabeceraId,cabeceraIdNombre,cabeceraIdApellido);
+
+            if(parser_PilotoFromText(fileArchivo,pArrayListPilotos))
+            {
+                retorno=1;
+            }
+            else
+            {
+                retorno=0;
+            }
+        }
+        else
+        {
+            printf("No se pudo abrir el archivo.");
+        }
+        fclose(fileArchivo);
+    }
+
+    return retorno;
+}
+
+
+int parser_PilotoFromText(FILE* pFile, LinkedList* pArrayListPilotos)
+{
+    char id[20];
+    char nombre[20];
+    char apellido[20];
+    int retorno=0;
+
+    ePiloto* pPiloto;
+
+   // printf("%d--%d--%d--%d--%d--%d--%d--%d",&idVuelo,&idAvion,&idPiloto,&fecha,&destino,&cantPasajeros,&horaDespegue,&horaLlegada);
+   // system("pause");
+
+    while(!feof(pFile))
+    {
+
+        fscanf(pFile,"%[^,],%[^,],%[^\n]\n",id,nombre,apellido);
+
+        // printf("%d--%d--%d--%d--%d--%d--%d--%d",strlen(idVuelo),strlen(idAvion),strlen(fecha),strlen(destino),strlen(cantPasajeros),strlen(horaDespegue),strlen(horaLlegada),strlen(idVuelo));
+        // system("pause");
+
+       // pPiloto=piloto_newParametros(id,nombre,apellido);
+
+        if(pPiloto!=NULL && pArrayListPilotos!=NULL)
+        {
+            ll_add(pArrayListPilotos,pPiloto);
+            retorno=1;
+        }
+    }
+
+    return retorno;
+
+}
 
 int parser_VueloFromText(FILE* pFile, LinkedList* pArrayListVuelos)
 {
@@ -90,7 +162,7 @@ int parser_VueloFromText(FILE* pFile, LinkedList* pArrayListVuelos)
 }
 
 
-int controller_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
 {
     eVuelo* vuelo;
     int contMostrados=0;
@@ -119,7 +191,7 @@ int controller_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
     return 1;
 }
 
-int controller_cantPasajeros(LinkedList* pArrayListVuelos)
+int controller_Aguirre_cantPasajeros(LinkedList* pArrayListVuelos)
 {
     int opcion;
     int retorno;
@@ -152,7 +224,7 @@ int controller_cantPasajeros(LinkedList* pArrayListVuelos)
     return retorno;
 }
 
-int controller_filterVuelosCortos(LinkedList* pArrayListVuelos)
+int controller_Aguirre_filterVuelosCortos(LinkedList* pArrayListVuelos)
 {
     int retorno=-1;
     char nombreFile[10];
@@ -166,7 +238,7 @@ int controller_filterVuelosCortos(LinkedList* pArrayListVuelos)
         {
             printf("Ingrese nombre del nuevo archivo a crear: ");
             gets(nombreFile);
-            retorno=controller_saveAsText(nombreFile,pLinkedListVuelosCortos);
+            retorno=controller_Aguirre_saveAsText(nombreFile,pLinkedListVuelosCortos);
 
         }
 
@@ -177,7 +249,7 @@ int controller_filterVuelosCortos(LinkedList* pArrayListVuelos)
 
 }
 
-int controller_saveAsText(char* path, LinkedList* pArrayListVuelos)
+int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos)
 {
     FILE* fileText;
     eVuelo* p;
@@ -201,7 +273,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListVuelos)
     return retorno;
 }
 
-int controller_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
 {
     int retorno=-1;
     LinkedList* pLinkedListVuelosPortugal=NULL;
@@ -212,7 +284,7 @@ int controller_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPi
 
         if(pLinkedListVuelosPortugal != NULL)
         {
-           controller_ListVuelos(pLinkedListVuelosPortugal,listaPilotos);
+           controller_Aguirre_ListVuelos(pLinkedListVuelosPortugal,listaPilotos);
            retorno=1;
 
         }
@@ -225,7 +297,7 @@ int controller_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPi
 
 }
 
-int controller_filterAlexLifeson(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_filterAlexLifeson(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
 {
     int retorno=-1;
     LinkedList* pLinkedListVuelosSinAlex=NULL;
@@ -236,7 +308,7 @@ int controller_filterAlexLifeson(LinkedList* pArrayListVuelos,ePiloto listaPilot
 
         if(pLinkedListVuelosSinAlex != NULL)
         {
-           controller_ListVuelos(pLinkedListVuelosSinAlex,listaPilotos);
+           controller_Aguirre_ListVuelos(pLinkedListVuelosSinAlex,listaPilotos);
            retorno=1;
 
         }

@@ -6,7 +6,8 @@
  * \return int 1 apertura y carga correcta, 0 error.
  *
  */
-int controller_cargarArchivos(char* path , LinkedList* pArrayListVuelos);
+int controller_Aguirre_cargarArchivosPilotos(char* path , LinkedList* pArrayListPilotos);
+int controller_Aguirre_cargarArchivosVuelos(char* path , LinkedList* pArrayListVuelos);
 
 /** \brief Separa el archivo que ingresa por el caracter ';' ,carga en memoria dinamica los empleados y los agrega a la LinkedList.
  *
@@ -23,14 +24,17 @@ int parser_VueloFromText(FILE* pFile , LinkedList* pArrayListVuelos);
  * \return int 1 listado correcto.
  *
  */
-int controller_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
 
-int controller_cantPasajeros(LinkedList* pArrayListVuelos);
+int parser_PilotoFromText(FILE* pFile , LinkedList* pArrayListPilotos);
 
-int controller_filterVuelosCortos(LinkedList* pArrayListVuelos);
+int controller_Aguirre_ListVuelos(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
 
-int controller_saveAsText(char* path, LinkedList* pArrayListVuelos);
+int controller_Aguirre_cantPasajeros(LinkedList* pArrayListVuelos);
 
-int controller_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
+int controller_Aguirre_filterVuelosCortos(LinkedList* pArrayListVuelos);
+
+int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos);
+
+int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,ePiloto listaPilotos[]);
 
 
