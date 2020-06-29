@@ -1,0 +1,11 @@
+idPiloto,nombre,apellido
+1,Alex,Lifeson
+2,Richard,Bach
+3,John,Kerry
+4,Erwin,Rommel
+5,Stephen,Coonts
+6,Juan,Ramirez
+7,Raul,Gonzalez
+8,Pedro,Aguirre
+9,Clara,Medina
+10,Marcos,Ayala
