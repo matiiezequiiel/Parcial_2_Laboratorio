@@ -125,13 +125,13 @@
 	<string.h>
 	"LinkedList.h"
 
-1593471896 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.c
+1593475793 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1593471889 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.h
+1593475802 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\linkedlist.h
 
 1593471776 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.c
 	<string.h>
@@ -140,20 +140,20 @@
 	"Pilotos.h"
 	"FuncionesUtiles.h"
 
-1593469868 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.h
+1593474608 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\pilotos.h
 
-1593471276 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.c
+1593475685 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.c
 	"Vuelos-Pilotos.h"
 	<stdio.h>
 
-1593470598 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.h
+1593475684 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos-pilotos.h
 	"Vuelos.h"
 	"Pilotos.h"
 	"LinkedList.h"
 
-1593471845 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.h
+1593472967 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.h
 
-1593471774 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.c
+1593475596 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\vuelos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -163,7 +163,7 @@
 
 1593467999 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.h
 
-1593471574 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.c
+1593475667 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -173,7 +173,7 @@
 	"Pilotos.h"
 	"Controller.h"
 
-1593471468 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.h
+1593473770 c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\controller.h
 
 1593468174 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\funcionesutiles.c
 	<stdio.h>
@@ -182,7 +182,7 @@
 	<ctype.h>
 	"FuncionesUtiles.h"
 
-1593471512 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\main.c
+1593473607 source:c:\users\matii\desktop\parcial 2\parcial_2_laboratorio\parcial_2_laboratorio\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

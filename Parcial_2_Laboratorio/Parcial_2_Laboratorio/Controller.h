@@ -38,5 +38,6 @@ int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos);
 int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos);
 
 int controller_Aguirre_filterPiloto(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos);
+int controller_Aguirre_filterAlexLifeson(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos);
 
 

@@ -68,4 +68,4 @@ int vuelosCortos(eVuelo* this);
 int vuelosPortugal(eVuelo* this);
 int vuelosSinAlexLifeson(eVuelo* this);
 
-int vuelosSinPiloto(eVuelo* this,char* piloto);
+int vuelosSinPiloto(eVuelo* this,int idPilotoFiltrar);

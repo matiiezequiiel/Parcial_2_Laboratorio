@@ -112,7 +112,20 @@ int main()
             controller_Aguirre_filterAlexLifeson(listaVuelos,ListaPilotos);
             break;
          case 8:
-            controller_Aguirre_filterPiloto(listaVuelos,ListaPilotos);
+            retorno=controller_Aguirre_filterPiloto(listaVuelos,ListaPilotos);
+             if(retorno)
+            {
+                system("cls");
+                printf("\nArchivo guardado correctamente.\n\n");
+                system("pause");
+                archivoCargado=1;
+            }
+            else
+            {
+                system("cls");
+                printf("\nNo se pudo guardar el archivo.\n\n");
+                system("pause");
+            }
             break;
 
         default:

@@ -426,4 +426,5 @@ int ll_count(LinkedList* this,int (*pFunc)(void* pElement));
  */
 LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element));
 
-LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,char* parametro),char* pilotoFiltro);
+LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,int pilotoFiltro),int idPilotoFiltro);
+//LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,char* pilotoFiltro),char* idPilotoFiltro);

@@ -559,7 +559,8 @@ LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element))
 }
 
 
-LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,char* nombrePiloto,char* apellidoPiloto),char* nombrePilotoFiltro,char* apellidoPilotoFiltro)
+LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,int pilotoFiltro),int idPilotoFiltro)
+//LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,char* pilotoFiltro),char* idPilotoFiltro)
 {
     int retornoFuncion;
     LinkedList* linkedListFilter=NULL;
@@ -570,7 +571,7 @@ LinkedList* ll_filter_param(LinkedList* this, int (*fn)(void* element,char* nomb
     {
        for(int i=0;i<ll_len(this);i++)
        {
-            retornoFuncion=fn(ll_get(this,i),nombrePilotoFiltro,apellidoPilotoFiltro);
+            retornoFuncion=fn(ll_get(this,i),idPilotoFiltro);
 
             if(retornoFuncion)
             {

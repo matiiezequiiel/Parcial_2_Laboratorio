@@ -336,7 +336,7 @@ int vuelosCortos(eVuelo* this)
 
     if(this != NULL)
     {
-        if((this->horaLlegada-this->horaDespegue)<=3)
+        if((this->horaLlegada-this->horaDespegue)<3)
         {
             retorno=1;
         }
@@ -386,14 +386,14 @@ int vuelosSinAlexLifeson(eVuelo* this)
     return retorno;
 }
 
-int vuelosSinPiloto(eVuelo* this,char* piloto)
+int vuelosSinPiloto(eVuelo* this,int idPilotoFiltrar)
 {
 
     int retorno=-1;
 
     if(this != NULL)
     {
-        if(strcmp(this->idPiloto,piloto)!= 0)
+        if(this->idPiloto != idPilotoFiltrar)
         {
             retorno=1;
         }

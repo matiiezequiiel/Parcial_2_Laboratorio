@@ -6,6 +6,8 @@
 #include "Vuelos.h"
 #include "Pilotos.h"
 #include "Controller.h"
+//#include "Vuelos-Pilotos.h"
+
 
 int controller_Aguirre_cargarArchivosVuelos(char* path, LinkedList* pArrayListVuelos)
 {
@@ -273,6 +275,7 @@ int controller_Aguirre_saveAsText(char* path, LinkedList* pArrayListVuelos)
     return retorno;
 }
 
+
 int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos)
 {
     int retorno=-1;
@@ -297,7 +300,7 @@ int controller_Aguirre_filterVuelosPortugal(LinkedList* pArrayListVuelos,LinkedL
 
 }
 
-int controller_Aguirre_filterAlexLifeson(LinkedList* pArrayListVuelos,ePiloto listaPilotos[])
+int controller_Aguirre_filterAlexLifeson(LinkedList* pArrayListVuelos,LinkedList* pArrayListPilotos)
 {
     int retorno=-1;
     LinkedList* pLinkedListVuelosSinAlex=NULL;
@@ -308,7 +311,7 @@ int controller_Aguirre_filterAlexLifeson(LinkedList* pArrayListVuelos,ePiloto li
 
         if(pLinkedListVuelosSinAlex != NULL)
         {
-           controller_Aguirre_ListVuelos(pLinkedListVuelosSinAlex,listaPilotos);
+           controller_Aguirre_ListVuelos(pLinkedListVuelosSinAlex,pArrayListPilotos);
            retorno=1;
 
         }
@@ -327,6 +330,9 @@ int controller_Aguirre_filterPiloto(LinkedList* pArrayListVuelos,LinkedList* pAr
     LinkedList* pLinkedListVuelosParametro=NULL;
     char nombrePiloto[20];
     char apellidoPiloto[20];
+    ePiloto* pPiloto=NULL;
+    int pilotoFiltro=0;
+    char nombreFile[20];
 
 
     printf("Ingrese nombre del piloto a filtrar: ");
@@ -337,14 +343,39 @@ int controller_Aguirre_filterPiloto(LinkedList* pArrayListVuelos,LinkedList* pAr
     fflush(stdin);
     gets(apellidoPiloto);
 
+   /* char apellidoNombre[50];
+    strcpy(apellidoNombre, nombrePiloto);
+    strcat(apellidoNombre, ",");
+    strcat(apellidoNombre, apellidoPiloto);*/
+
+
     if(pArrayListVuelos != NULL && pArrayListPilotos != NULL)
     {
-        pLinkedListVuelosParametro=ll_filter_param(pArrayListVuelos,vuelosSinPiloto,nombrePiloto,apellidoPiloto);
+        for(int i=0;i<ll_len(pArrayListPilotos);i++)
+        {
+            pPiloto=(ePiloto*)ll_get(pArrayListPilotos,i);
+            if(strcmp(pPiloto->nombre,nombrePiloto)==0 && strcmp(pPiloto->apellido,apellidoPiloto)==0)
+            {
+                pilotoFiltro=pPiloto->idPiloto;
+                printf("%d",pilotoFiltro);
+                system("pause");
 
-        if(pLinkedListVuelosParametro != NULL)
+            }
+        }
+        pLinkedListVuelosParametro=ll_filter_param(pArrayListVuelos,vuelosSinPiloto,pilotoFiltro);
+        //pLinkedListVuelosParametro=ll_filter_param(pArrayListVuelos,vuelosFiltroPiloto,apellidoNombre);
+
+       /*if(pLinkedListVuelosParametro != NULL)
         {
            controller_Aguirre_ListVuelos(pLinkedListVuelosParametro,pArrayListPilotos);
            retorno=1;
+
+        }*/
+         if(pLinkedListVuelosParametro != NULL)
+        {
+            printf("Ingrese nombre del nuevo archivo a crear: ");
+            gets(nombreFile);
+            retorno=controller_Aguirre_saveAsText(nombreFile,pLinkedListVuelosParametro);
 
         }
 
@@ -355,3 +386,6 @@ int controller_Aguirre_filterPiloto(LinkedList* pArrayListVuelos,LinkedList* pAr
 
 
 }
+
+
+
